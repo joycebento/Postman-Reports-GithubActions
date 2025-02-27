@@ -1,0 +1,23 @@
+{
+  "name": "api-testing-challenge",
+  "version": "1.0.0",
+  "description": "QA Engineering Assessment: API Testing Challenge",
+  "main": "index.js",
+  "scripts": {
+    "api:server": "json-server --watch api/db.json --routes api/routes.json --port 3001 --middlewares api/server.js",
+    "ui:server": "http-server public -p 3000",
+    "test:api": "jest tests/api/api.test.js --forceExit"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  }
+}
